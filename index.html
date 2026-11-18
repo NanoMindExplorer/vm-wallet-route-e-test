@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VM Wallet Route E Test</title>
+<style>
+  body { font-family: system-ui, sans-serif; margin: 24px; max-width: 900px; }
+  pre { background: #f4f4f4; padding: 12px; white-space: pre-wrap; word-break: break-all; border: 1px solid #ccc; }
+  button { margin: 4px 8px 4px 0; padding: 8px 14px; font-size: 15px; }
+  .label { font-weight: bold; margin-top: 18px; }
+</style>
+</head>
+<body>
+<h1>VM Wallet Route E Test</h1>
+<p>dApp uji minimal: URI pairing WalletConnect ditampilkan sebagai TEKS biasa (bukan QR), supaya bisa dibaca agen browser tanpa clipboard.</p>
+<p>Chain: eip155:11155111 (Ethereum Sepolia, testnet). Pesan test personal_sign bukan login dan tidak berbahaya.</p>
+
+<button id="btn-connect">Buat pairing (Connect)</button>
+<button id="btn-new-pairing">Pairing baru</button>
+<button id="btn-sign" disabled>Test personal_sign</button>
+
+<div class="label">Status:</div>
+<pre id="status">siap</pre>
+
+<div class="label">URI pairing (wc:):</div>
+<pre id="wc-uri">(belum ada — klik "Buat pairing")</pre>
+<div>Dibuat: <span id="uri-created">-</span></div>
+
+<div class="label">Sesi:</div>
+<pre id="session-info">(belum terhubung)</pre>
+
+<div class="label">Hasil personal_sign:</div>
+<pre id="sign-result">(belum ada)</pre>
+
+<div class="label">Log status:</div>
+<pre id="status-log"></pre>
+
+<script src="./bundle.js"></script>
+</body>
+</html>
